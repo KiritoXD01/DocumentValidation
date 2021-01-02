@@ -1,6 +1,6 @@
 {
-    "name": "kiritoxd01/dominican-validation",
-    "description": "PHP Class to wrap dominican ID validation",
+    "name": "kiritoxd01/document-validation",
+    "description": "PHP Class to wrap ID validation",
     "type": "library",
     "license": "MIT",
     "authors": [
