@@ -16,7 +16,7 @@ class DocumentValidation
         $verificador  = substr($c, - 1, 1);
         $suma         = 0;
         
-        if (strlen($ced) != 11) {
+        if (strlen($c) != 11) {
             return false;
         }
        
