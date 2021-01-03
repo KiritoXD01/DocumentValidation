@@ -15,12 +15,11 @@ class DocumentValidation
         $cedula       = substr($c, 0,  - 1);
         $verificador  = substr($c, - 1, 1);
         $suma         = 0;
-        $cedulaValida = 0;
-
-        if (strlen($ced) < 11) {
+        
+        if (strlen($ced) != 11) {
             return false;
         }
-
+       
         for ($i = 0; $i < strlen($cedula); $i++) {
 
             $mod = "";
@@ -37,22 +36,20 @@ class DocumentValidation
                 $res = (string) $res;
                 $uno = substr($res, 0, 1);
                 $dos = substr($res, 1, 1);
-
+              
                 $res = $uno + $dos;
             }
 
             $suma += $res;
 
         }
-
+        
         $el_numero = (10 - ($suma % 10)) % 10;
 
         if ($el_numero == $verificador && substr($cedula, 0, 3) != "000") {
-            $cedulaValida = 1;
+            return true;
         } else {
-            $cedulaValida = 0;
+            return false;
         }
-
-        return $cedulaValida;
     }
 }
